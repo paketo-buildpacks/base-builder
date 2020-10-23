@@ -39,7 +39,9 @@ jobs:
         docker tag builder "gcr.io/paketo-buildpacks/builder-tmp:latest"
         docker tag builder "gcr.io/paketo-buildpacks/builder-tmp:base"
         docker tag builder "gcr.io/paketo-buildpacks/builder-tmp:${{ steps.event.outputs.tag }}-base"
+        docker tag builder "gcr.io/paketo-buildpacks/builder-tmp:base-platform-api-0.3"
 
         docker push "gcr.io/paketo-buildpacks/builder-tmp:latest"
         docker push "gcr.io/paketo-buildpacks/builder-tmp:base"
         docker push "gcr.io/paketo-buildpacks/builder-tmp:${{ steps.event.outputs.tag }}-base"
+        docker push "gcr.io/paketo-buildpacks/builder-tmp:base-platform-api-0.3"
