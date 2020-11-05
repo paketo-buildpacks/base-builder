@@ -9,12 +9,12 @@ description = "Ubuntu bionic base image with buildpacks for Java, NodeJS and Gol
   version = "0.2.3"
 
 [[buildpacks]]
-  image = "gcr.io/paketo-buildpacks/java-native-image:3.5.0"
-  version = "3.5.0"
+  image = "gcr.io/paketo-buildpacks/java-native-image:4.0.0"
+  version = "4.0.0"
 
 [[buildpacks]]
-  image = "gcr.io/paketo-buildpacks/java:3.7.0"
-  version = "3.7.0"
+  image = "gcr.io/paketo-buildpacks/java:4.0.0"
+  version = "4.0.0"
 
 [[buildpacks]]
   image = "gcr.io/paketo-buildpacks/nginx:0.0.193"
@@ -69,13 +69,13 @@ description = "Ubuntu bionic base image with buildpacks for Java, NodeJS and Gol
 
   [[order.group]]
     id = "paketo-buildpacks/java-native-image"
-    version = "3.5.0"
+    version = "4.0.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/java"
-    version = "3.7.0"
+    version = "4.0.0"
 
 [[order]]
 
@@ -85,6 +85,6 @@ description = "Ubuntu bionic base image with buildpacks for Java, NodeJS and Gol
 
 [stack]
   id = "io.buildpacks.stacks.bionic"
-  build-image = "docker.io/paketobuildpacks/build:0.0.97-base-cnb"
+  build-image = "docker.io/paketobuildpacks/build:1.0.1-base-cnb"
   run-image = "index.docker.io/paketobuildpacks/run:base-cnb"
   run-image-mirrors = ["gcr.io/paketo-buildpacks/run:base-cnb"]
