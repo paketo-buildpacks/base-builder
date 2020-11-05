@@ -9,8 +9,8 @@ description = "Ubuntu bionic base image with buildpacks for Java, NodeJS and Gol
   version = "0.2.3"
 
 [[buildpacks]]
-  image = "gcr.io/paketo-buildpacks/java-native-image:4.0.0"
-  version = "4.0.0"
+  image = "gcr.io/paketo-buildpacks/java-native-image:4.1.0"
+  version = "4.1.0"
 
 [[buildpacks]]
   image = "gcr.io/paketo-buildpacks/java:4.0.0"
@@ -69,7 +69,7 @@ description = "Ubuntu bionic base image with buildpacks for Java, NodeJS and Gol
 
   [[order.group]]
     id = "paketo-buildpacks/java-native-image"
-    version = "4.0.0"
+    version = "4.1.0"
 
 [[order]]
 
