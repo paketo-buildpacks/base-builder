@@ -34,12 +34,44 @@ jobs:
         GCR_PUSH_BOT_JSON_KEY: ${{ secrets.GCR_PUSH_BOT_JSON_KEY }}
       run: |
         echo "${GCR_PUSH_BOT_JSON_KEY}" | docker login --username _json_key --password-stdin gcr.io
-        docker tag builder "gcr.io/paketo-buildpacks/builder-tmp:latest"
-        docker tag builder "gcr.io/paketo-buildpacks/builder-tmp:base"
-        docker tag builder "gcr.io/paketo-buildpacks/builder-tmp:${{ steps.event.outputs.tag }}-base"
-        docker tag builder "gcr.io/paketo-buildpacks/builder-tmp:base-platform-api-0.3"
+        docker tag builder "gcr.io/paketo-buildpacks/builder:latest"
+        docker tag builder "gcr.io/paketo-buildpacks/builder:base"
+        docker tag builder "gcr.io/paketo-buildpacks/builder:${{ steps.event.outputs.tag }}-base"
+        docker tag builder "gcr.io/paketo-buildpacks/builder:base-platform-api-0.3"
 
-        docker push "gcr.io/paketo-buildpacks/builder-tmp:latest"
-        docker push "gcr.io/paketo-buildpacks/builder-tmp:base"
-        docker push "gcr.io/paketo-buildpacks/builder-tmp:${{ steps.event.outputs.tag }}-base"
-        docker push "gcr.io/paketo-buildpacks/builder-tmp:base-platform-api-0.3"
+        docker push "gcr.io/paketo-buildpacks/builder:latest"
+        docker push "gcr.io/paketo-buildpacks/builder:base"
+        docker push "gcr.io/paketo-buildpacks/builder:${{ steps.event.outputs.tag }}-base"
+        docker push "gcr.io/paketo-buildpacks/builder:base-platform-api-0.3"
+
+    - name: Push
+      env:
+        PAKETO_BUILDPACKS_DOCKERHUB_USERNAME: ${{ secrets.PAKETO_BUILDPACKS_DOCKERHUB_USERNAME }}
+        PAKETO_BUILDPACKS_DOCKERHUB_PASSWORD: ${{ secrets.PAKETO_BUILDPACKS_DOCKERHUB_PASSWORD }}
+      run: |
+        echo "${PAKETO_BUILDPACKS_DOCKERHUB_PASSWORD}" | docker login --username "${PAKETO_BUILDPACKS_DOCKERHUB_USERNAME}" --password-stdin
+        docker tag builder "paketobuildpacks/builder:latest"
+        docker tag builder "paketobuildpacks/builder:base"
+        docker tag builder "paketobuildpacks/builder:${{ steps.event.outputs.tag }}-base"
+        docker tag builder "paketobuildpacks/builder:base-platform-api-0.3"
+
+        docker push "paketobuildpacks/builder:latest"
+        docker push "paketobuildpacks/builder:base"
+        docker push "paketobuildpacks/builder:${{ steps.event.outputs.tag }}-base"
+        docker push "paketobuildpacks/builder:base-platform-api-0.3"
+
+    - name: Push
+      env:
+        CLOUDFOUNDRY_DOCKERHUB_USERNAME: ${{ secrets.CLOUDFOUNDRY_DOCKERHUB_USERNAME }}
+        CLOUDFOUNDRY_DOCKERHUB_PASSWORD: ${{ secrets.CLOUDFOUNDRY_DOCKERHUB_PASSWORD }}
+      run: |
+        echo "${CLOUDFOUNDRY_DOCKERHUB_PASSWORD}" | docker login --username "${CLOUDFOUNDRY_DOCKERHUB_USERNAME}" --password-stdin
+        docker tag builder "cloudfoundry/cnb:latest"
+        docker tag builder "cloudfoundry/cnb:base"
+        docker tag builder "cloudfoundry/cnb:${{ steps.event.outputs.tag }}-base"
+        docker tag builder "cloudfoundry/cnb:base-platform-api-0.3"
+
+        docker push "cloudfoundry/cnb:latest"
+        docker push "cloudfoundry/cnb:base"
+        docker push "cloudfoundry/cnb:${{ steps.event.outputs.tag }}-base"
+        docker push "cloudfoundry/cnb:base-platform-api-0.3"
