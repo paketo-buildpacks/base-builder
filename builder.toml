@@ -29,8 +29,8 @@ description = "Ubuntu bionic base image with buildpacks for Java, NodeJS and Gol
   version = "3.0.0"
 
 [[buildpacks]]
-  image = "gcr.io/paketo-buildpacks/ruby:0.1.3"
-  version = "0.1.3"
+  image = "gcr.io/paketo-buildpacks/ruby:0.1.4"
+  version = "0.1.4"
 
 [lifecycle]
   version = "0.9.3"
@@ -39,7 +39,7 @@ description = "Ubuntu bionic base image with buildpacks for Java, NodeJS and Gol
 
   [[order.group]]
     id = "paketo-buildpacks/ruby"
-    version = "0.1.3"
+    version = "0.1.4"
 
 [[order]]
 
