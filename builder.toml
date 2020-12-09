@@ -1,4 +1,4 @@
-description = "Ubuntu bionic base image with buildpacks for Java, NodeJS and Golang"
+description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, NodeJS, Go, Ruby, NGINX and Procfile"
 
 [[buildpacks]]
   image = "gcr.io/paketo-buildpacks/dotnet-core:0.0.9"
