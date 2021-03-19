@@ -2,7 +2,7 @@
 
 ## `paketobuildpacks/builder:base`
 
-This builder uses an Ubuntu bionic base image with buildpacks for Java, .NET
+This builder uses the [Paketo Base Stack](https://github.com/paketo-buildpacks/base-stack-release) (an Ubuntu bionic base image) with buildpacks for Java, .NET
 Core, NodeJS, Go, Ruby and NGINX.
 
 To see which versions of build and run images, buildpacks, and the lifecycle
