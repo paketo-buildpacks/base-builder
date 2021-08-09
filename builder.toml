@@ -9,8 +9,8 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
   version = "0.9.0"
 
 [[buildpacks]]
-  uri = "docker://gcr.io/paketo-buildpacks/java-native-image:5.4.0"
-  version = "5.4.0"
+  uri = "docker://gcr.io/paketo-buildpacks/java-native-image:5.5.0"
+  version = "5.5.0"
 
 [[buildpacks]]
   uri = "docker://gcr.io/paketo-buildpacks/java:5.11.0"
@@ -21,16 +21,16 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
   version = "0.3.1"
 
 [[buildpacks]]
-  uri = "docker://gcr.io/paketo-buildpacks/nodejs:0.6.0"
-  version = "0.6.0"
+  uri = "docker://gcr.io/paketo-buildpacks/nodejs:0.6.1"
+  version = "0.6.1"
 
 [[buildpacks]]
   uri = "docker://gcr.io/paketo-buildpacks/procfile:4.2.2"
   version = "4.2.2"
 
 [[buildpacks]]
-  uri = "docker://gcr.io/paketo-buildpacks/ruby:0.7.1"
-  version = "0.7.1"
+  uri = "docker://gcr.io/paketo-buildpacks/ruby:0.7.2"
+  version = "0.7.2"
 
 [lifecycle]
   version = "0.11.4"
@@ -39,7 +39,7 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
 
   [[order.group]]
     id = "paketo-buildpacks/ruby"
-    version = "0.7.1"
+    version = "0.7.2"
 
 [[order]]
 
@@ -51,7 +51,7 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
 
   [[order.group]]
     id = "paketo-buildpacks/nodejs"
-    version = "0.6.0"
+    version = "0.6.1"
 
 [[order]]
 
@@ -69,7 +69,7 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
 
   [[order.group]]
     id = "paketo-buildpacks/java-native-image"
-    version = "5.4.0"
+    version = "5.5.0"
 
 [[order]]
 
@@ -84,7 +84,7 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
     version = "4.2.2"
 
 [stack]
-  build-image = "docker.io/paketobuildpacks/build:1.1.18-base-cnb"
+  build-image = "docker.io/paketobuildpacks/build:1.1.19-base-cnb"
   id = "io.buildpacks.stacks.bionic"
   run-image = "index.docker.io/paketobuildpacks/run:base-cnb"
   run-image-mirrors = ["gcr.io/paketo-buildpacks/run:base-cnb"]
