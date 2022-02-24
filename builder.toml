@@ -54,12 +54,6 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
 [[order]]
 
   [[order.group]]
-    id = "paketo-buildpacks/nodejs"
-    version = "0.14.0"
-
-[[order]]
-
-  [[order.group]]
     id = "paketo-buildpacks/go"
     version = "0.15.0"
 
@@ -86,6 +80,12 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
   [[order.group]]
     id = "paketo-buildpacks/java"
     version = "6.10.0"
+
+[[order]]
+
+  [[order.group]]
+    id = "paketo-buildpacks/nodejs"
+    version = "0.14.0"
 
 [[order]]
 
