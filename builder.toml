@@ -1,4 +1,4 @@
-description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, NodeJS, Go, Python, Ruby, NGINX and Procfile"
+description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, NodeJS, Go, Python, Ruby, Apache HTTPD, NGINX and Procfile"
 
 [[buildpacks]]
   uri = "docker://gcr.io/paketo-buildpacks/dotnet-core:0.17.2"
@@ -15,10 +15,6 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
 [[buildpacks]]
   uri = "docker://gcr.io/paketo-buildpacks/java:6.27.0"
   version = "6.27.0"
-
-[[buildpacks]]
-  uri = "docker://gcr.io/paketo-buildpacks/nginx:0.7.0"
-  version = "0.7.0"
 
 [[buildpacks]]
   uri = "docker://gcr.io/paketo-buildpacks/nodejs:0.17.1"
@@ -39,6 +35,10 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
 [[buildpacks]]
   uri = "docker://gcr.io/paketo-buildpacks/watchexec:2.4.1"
   version = "2.4.1"
+
+[[buildpacks]]
+  uri = "docker://gcr.io/paketo-buildpacks/web-servers:0.0.2"
+  version = "0.0.2"
 
 [lifecycle]
   version = "0.14.1"
@@ -70,13 +70,8 @@ description = "Ubuntu bionic base image with buildpacks for Java, .NET Core, Nod
 [[order]]
 
   [[order.group]]
-    id = "paketo-buildpacks/watchexec"
-    optional = true
-    version = "2.4.1"
-
-  [[order.group]]
-    id = "paketo-buildpacks/nginx"
-    version = "0.7.0"
+    id = "paketo-buildpacks/web-servers"
+    version = "0.0.2"
 
 [[order]]
 

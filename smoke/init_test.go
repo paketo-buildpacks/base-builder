@@ -31,10 +31,10 @@ func TestSmoke(t *testing.T) {
 	suite("Go", testGo)
 	suite("Java Native Image", testJavaNativeImage)
 	suite("Java", testJava)
-	suite("NGINX", testNGINX)
 	suite("Nodejs", testNodejs)
 	suite("Procfile", testProcfile)
 	suite("Python", testPython)
 	suite("Ruby", testRuby)
+	suite("Web Servers", testWebServers)
 	suite.Run(t)
 }
