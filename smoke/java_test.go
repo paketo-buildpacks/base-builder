@@ -69,7 +69,7 @@ func testJava(t *testing.T, context spec.G, it spec.S) {
 
 			Eventually(container).Should(BeAvailable())
 
-			Expect(logs).To(ContainLines(ContainSubstring("Paketo CA Certificates Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for CA Certificates")))
 			Expect(logs).To(ContainLines(ContainSubstring("Paketo BellSoft Liberica Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Paketo Executable JAR Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Paketo Buildpack for Spring Boot")))
