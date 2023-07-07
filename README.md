@@ -1,4 +1,9 @@
 # Paketo Base Builder
+## ⚠️ This repository is archived. No further releases will be made! ⚠️
+
+## Use the [Paketo Jammy Base Builder](https://github.com/paketo-buildpacks/builder-jammy-base) instead.
+
+---
 
 ## `paketobuildpacks/builder:base`
 
